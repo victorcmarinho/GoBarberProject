@@ -1,0 +1,67 @@
+{
+  "name": "Gobarber",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@sentry/node": "5.13.0",
+    "bcryptjs": "^2.4.3",
+    "bee-queue": "^1.2.3",
+    "cors": "^2.8.5",
+    "date-fns": "^2.0.0-beta.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-handlebars": "^3.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.3",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.4",
+    "nodemailer-express-handlebars": "^3.1.0",
+    "pg": "^7.18.2",
+    "pg-hstore": "^2.3.3",
+    "promise": "^8.0.3",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.4",
+    "sequelize": "^5.21.5",
+    "youch": "^2.0.10",
+    "yup": "^0.28.1"
+  },
+  "description": "Servico de Agendamento",
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/bluebird": "^3.5.29",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.2",
+    "@types/jsonwebtoken": "^8.3.7",
+    "@types/mongoose": "^5.7.3",
+    "@types/multer": "^1.4.2",
+    "@types/node": "^13.7.4",
+    "@types/nodemailer": "^6.4.0",
+    "@types/rx": "^4.1.1",
+    "@types/sequelize": "^4.28.8",
+    "@types/validator": "^12.0.1",
+    "@types/yup": "^0.26.32",
+    "nodemon": "^2.0.2",
+    "sequelize-cli": "^5.5.1",
+    "sucrase": "^3.12.1",
+    "typescript": "^3.8.2"
+  },
+  "scripts": {
+    "dev": "nodemon --inspect src/server.ts",
+    "queue": "nodemon src/queue.ts"
+  },
+  "repository": "git+https://github.com/victorcmarinho/GoBaer.git",
+  "keywords": [
+    "NodeJS",
+    "Node",
+    "Javascript",
+    "Typescript"
+  ],
+  "author": "Victor Marinho",
+  "bugs": {
+    "url": "https://github.com/victorcmarinho/GoBaer/issues"
+  },
+  "homepage": "https://github.com/victorcmarinho/GoBaer#readme"
+}
