@@ -1,5 +1,5 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-
+import { Exclude, Expose } from 'class-transformer';
 export interface IUser {
     id: string;
     name: string;
@@ -23,6 +23,7 @@ export class UserEntity implements IUser {
     email: string;
 
     @Column()
+    @Exclude()
     password: string;
 
     @Column()
@@ -33,5 +34,10 @@ export class UserEntity implements IUser {
 
     @UpdateDateColumn()
     updated_at: Date;
+
+    @Expose({name: 'avatar_url'})
+    getAvatarUrl(): string | null {
+        return this.avatar ? `${process.env.APP_API_URL}/files/${this.avatar}` : null;
+    }
 
 }

@@ -20,9 +20,9 @@ export default class UserTokensRepository implements IUserTokensRepository{
         return userToken;
     }
 
-    async findByTokenId(tokenId: string): Promise<UserTokenEntity | undefined> {
+    async findByTokenId(token: string): Promise<UserTokenEntity | undefined> {
         return await this.ormRepository.findOne({
-            where: {tokenId}
+            where: {token}
         });
     }
 

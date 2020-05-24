@@ -7,3 +7,5 @@ temp/*
 temp/.gitkeep
 coverage/
 coverage/*
+.env
+ormconfig.json
