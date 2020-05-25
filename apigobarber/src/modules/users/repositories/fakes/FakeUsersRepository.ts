@@ -1,10 +1,8 @@
-import { EntityRepository, Repository, getRepository } from "typeorm";
-import ICreateAppointmentDTO from "@modules/appointments/dtos/ICreateAppointmentDTO";
-import IUsersRepository from "@modules/users/repositories/IUsersRepository";
 import ICreateUserDTO from "@modules/users/dtos/ICreateUserDTO";
-import { UserEntity } from "@modules/users/infra/typeorm/entities/UserEntity";
-import { uuid } from "uuidv4";
 import IFindAllProvidersDTO from "@modules/users/dtos/IFindAllProvidersDTO";
+import { UserEntity } from "@modules/users/infra/typeorm/entities/UserEntity";
+import IUsersRepository from "@modules/users/repositories/IUsersRepository";
+import { uuid } from "uuidv4";
 
 export default class FakeUsersRepository implements IUsersRepository{
 

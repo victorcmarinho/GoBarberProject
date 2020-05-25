@@ -1,12 +1,10 @@
-import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
-import { getRepository } from "typeorm";
+import { inject, injectable } from "tsyringe";
 import auth from "../../../config/auth";
 import AppError from "../../../shared/errors/AppErros";
 import { UserEntity } from "../infra/typeorm/entities/UserEntity";
-import IUsersRepository from "../repositories/IUsersRepository";
-import { injectable, inject } from "tsyringe";
 import IHashProvider from "../providers/HashProvider/models/IHashProvider";
+import IUsersRepository from "../repositories/IUsersRepository";
 
 interface IRequestDTO {
     email: string,

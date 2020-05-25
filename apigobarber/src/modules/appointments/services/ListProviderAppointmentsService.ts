@@ -1,8 +1,7 @@
 import "reflect-metadata";
 import { inject, injectable } from "tsyringe";
-import { getDate, getDaysInMonth } from "date-fns";
-import IAppointmentsRepository from "../repositories/IAppointmentsRepository";
 import { AppointmentEntity } from "../infra/typeorm/entities/Appointment.model";
+import IAppointmentsRepository from "../repositories/IAppointmentsRepository";
 
 interface IRequest {
     provider_id: string;

@@ -1,6 +1,6 @@
-import {Request, Response} from 'express'
-import { container } from 'tsyringe';
 import ListProviderMonthAvailabilityService from '@modules/appointments/services/ListProviderMonthAvailabilityService';
+import { Request, Response } from 'express';
+import { container } from 'tsyringe';
 
 export default class ProviderMonthAvailabilityController {
 

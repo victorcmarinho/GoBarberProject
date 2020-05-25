@@ -1,8 +1,8 @@
 import ICreateUserDTO from "@modules/users/dtos/ICreateUserDTO";
-import IUsersRepository from "@modules/users/repositories/IUsersRepository";
-import { getRepository, Repository, Not } from "typeorm";
-import { UserEntity } from "../entities/UserEntity";
 import IFindAllProvidersDTO from "@modules/users/dtos/IFindAllProvidersDTO";
+import IUsersRepository from "@modules/users/repositories/IUsersRepository";
+import { getRepository, Not, Repository } from "typeorm";
+import { UserEntity } from "../entities/UserEntity";
 
 export default class UsersRepository implements IUsersRepository{
 

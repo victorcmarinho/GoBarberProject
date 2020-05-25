@@ -1,10 +1,10 @@
 import FakeMailProvider from "@shared/container/providers/MailProvider/fakes/FakeMailProvider";
+import AppError from "@shared/errors/AppErros";
+import FakeHashProvider from "../providers/HashProvider/fakes/FakeBCryptHashProvider";
 import FakeUsersRepository from "../repositories/fakes/FakeUsersRepository";
 import FakeUserTokensRepository from "../repositories/fakes/FakeUserTokensRepository";
-import SendForgotPasswordEmailService from "./SendForgotPasswordEmailService";
 import ResetPasswordService from "./ResetPasswordService";
-import FakeHashProvider from "../providers/HashProvider/fakes/FakeBCryptHashProvider";
-import AppError from "@shared/errors/AppErros";
+import SendForgotPasswordEmailService from "./SendForgotPasswordEmailService";
 
 let fakeUsersRepository: FakeUsersRepository;
 let fakeMailProvider: FakeMailProvider;

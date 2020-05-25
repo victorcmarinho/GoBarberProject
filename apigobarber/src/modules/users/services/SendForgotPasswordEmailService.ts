@@ -1,9 +1,9 @@
 import IMailProvider from "@shared/container/providers/MailProvider/model/IMailProvider";
-import { inject, injectable } from "tsyringe";
+import AppError from "@shared/errors/AppErros";
 import path from "path";
+import { inject, injectable } from "tsyringe";
 import { UserEntity } from "../infra/typeorm/entities/UserEntity";
 import IUsersRepository from "../repositories/IUsersRepository";
-import AppError from "@shared/errors/AppErros";
 import IUserTokensRepository from "../repositories/IUserTokensRepository";
 
 interface IRequestDTO {

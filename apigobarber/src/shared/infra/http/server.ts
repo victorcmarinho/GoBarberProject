@@ -1,14 +1,17 @@
-import uploadConfig from '@config/upload';
-import 'dotenv/config'
-import AppError from '@shared/errors/AppErros';
-import '@shared/infra/typeorm';
-import '@shared/container';
-import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
+import 'dotenv/config';
 import 'reflect-metadata';
-import routes from './routes';
+
+import '@shared/infra/typeorm';
+import '@config/auth';
+import '@shared/container';
+
+import uploadConfig from '@config/upload';
+import AppError from '@shared/errors/AppErros';
 import { errors } from 'celebrate';
+import cors from 'cors';
+import routes from './routes';
 
 const app = express();
 

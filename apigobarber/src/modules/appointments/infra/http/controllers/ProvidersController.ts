@@ -1,7 +1,6 @@
-import {Request, Response} from 'express'
-import { parseISO } from 'date-fns';
-import { container } from 'tsyringe';
 import ListProvidersService from '@modules/appointments/services/ListProvidersService';
+import { Request, Response } from 'express';
+import { container } from 'tsyringe';
 
 export default class ProvidersController {
 

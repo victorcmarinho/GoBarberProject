@@ -1,6 +1,6 @@
-import { inject, injectable } from "tsyringe";
-import IUsersRepository from "@modules/users/repositories/IUsersRepository";
 import { UserEntity } from "@modules/users/infra/typeorm/entities/UserEntity";
+import IUsersRepository from "@modules/users/repositories/IUsersRepository";
+import { inject, injectable } from "tsyringe";
 
 interface IRequest {
     user_id: string;

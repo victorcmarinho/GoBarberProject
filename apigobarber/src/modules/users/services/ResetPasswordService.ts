@@ -1,9 +1,9 @@
+import AppError from "@shared/errors/AppErros";
+import { differenceInHours } from 'date-fns';
 import { inject, injectable } from "tsyringe";
+import IHashProvider from "../providers/HashProvider/models/IHashProvider";
 import IUsersRepository from "../repositories/IUsersRepository";
 import IUserTokensRepository from "../repositories/IUserTokensRepository";
-import AppError from "@shared/errors/AppErros";
-import IHashProvider from "../providers/HashProvider/models/IHashProvider";
-import { differenceInHours } from 'date-fns'
 
 interface IRequest {
     token: string;
@@ -27,7 +27,7 @@ export default class ResetPasswordService {
     public async execute({token, password}: IRequest): Promise<void> {
         
         const userToken = await this.userTokensRepository.findByTokenId(token);
-        console.log('teste aaa', userToken)
+        
         if(!userToken)
             throw new AppError('User token does not exist');
         

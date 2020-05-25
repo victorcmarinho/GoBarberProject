@@ -1,10 +1,8 @@
-import { hash } from "bcryptjs";
-import { getRepository } from "typeorm";
+import { inject, injectable } from "tsyringe";
 import AppError from "../../../shared/errors/AppErros";
 import { UserEntity } from "../infra/typeorm/entities/UserEntity";
-import IUsersRepository from "../repositories/IUsersRepository";
-import { inject, injectable } from "tsyringe";
 import IHashProvider from "../providers/HashProvider/models/IHashProvider";
+import IUsersRepository from "../repositories/IUsersRepository";
 
 interface RequestDTO {
     name: string,

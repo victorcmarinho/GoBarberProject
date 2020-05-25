@@ -1,6 +1,6 @@
 import INotificationsRepository from "@modules/notifications/repositories/INotificationsRepository";
 import AppError from "@shared/errors/AppErros";
-import { getHours, isBefore, startOfHour, format } from "date-fns";
+import { format, getHours, isBefore, startOfHour } from "date-fns";
 import { inject, injectable } from "tsyringe";
 import { AppointmentEntity } from "../infra/typeorm/entities/Appointment.model";
 import IAppointmentsRepository from "../repositories/IAppointmentsRepository";

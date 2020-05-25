@@ -1,8 +1,5 @@
 import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
-import fs from 'fs';
-import path from 'path';
 import { inject, injectable } from 'tsyringe';
-import uploadConfig from '../../../config/upload';
 import AppError from '../../../shared/errors/AppErros';
 import { UserEntity } from '../infra/typeorm/entities/UserEntity';
 import IUsersRepository from '../repositories/IUsersRepository';

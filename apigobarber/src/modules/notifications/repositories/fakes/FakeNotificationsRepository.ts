@@ -1,7 +1,6 @@
 import ICreateNotificationDTO from "@modules/notifications/dtos/ICreateNotificationDTO";
-import INotificationsRepository from "@modules/notifications/repositories/INotificationsRepository";
-import { getMongoRepository, MongoRepository } from "typeorm";
 import NotificationEntity from "@modules/notifications/infra/typeorm/schemas/Notification";
+import INotificationsRepository from "@modules/notifications/repositories/INotificationsRepository";
 import { ObjectID } from "mongodb";
 
 export default class FakeNotificationsRepository implements INotificationsRepository {

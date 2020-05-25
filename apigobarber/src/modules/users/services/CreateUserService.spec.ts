@@ -1,7 +1,7 @@
 import AppError from "@shared/errors/AppErros";
+import FakeHashProvider from "../providers/HashProvider/fakes/FakeBCryptHashProvider";
 import FakeUsersRepository from "../repositories/fakes/FakeUsersRepository";
 import CreateUserService from "./CreateUserService";
-import FakeHashProvider from "../providers/HashProvider/fakes/FakeBCryptHashProvider";
 
 let fakeUsersRepository: FakeUsersRepository;
 let fakeHashProvider: FakeHashProvider;

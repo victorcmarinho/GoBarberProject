@@ -1,7 +1,6 @@
+import AppError from "@shared/errors/AppErros";
 import FakeUsersRepository from "../repositories/fakes/FakeUsersRepository";
 import ShowProfileService from "./ShowProfileService";
-import UpdateProfileService from "./UpdateProfileService";
-import AppError from "@shared/errors/AppErros";
 
 let fakeUsersRepository: FakeUsersRepository;
 

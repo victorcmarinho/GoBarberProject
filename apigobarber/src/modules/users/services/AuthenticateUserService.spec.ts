@@ -1,8 +1,8 @@
 import AppError from "@shared/errors/AppErros";
-import FakeUsersRepository from "../repositories/fakes/FakeUsersRepository";
-import CreateUserService from "./CreateUserService";
-import AuthenticateUserService from "./AuthenticateUserService";
 import FakeHashProvider from "../providers/HashProvider/fakes/FakeBCryptHashProvider";
+import FakeUsersRepository from "../repositories/fakes/FakeUsersRepository";
+import AuthenticateUserService from "./AuthenticateUserService";
+import CreateUserService from "./CreateUserService";
 
 let fakeUsersRepository:FakeUsersRepository;
 let fakeHashProvider:FakeHashProvider;
@@ -20,9 +20,6 @@ describe('AuthenticateUser', () => {
 
 
     it('should be able to authenticate', async () => {
-
-
-
 
         const user = await createdUsersService.execute({
             name: 'John Doe',

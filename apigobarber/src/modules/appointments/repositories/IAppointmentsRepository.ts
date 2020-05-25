@@ -1,7 +1,7 @@
-import { AppointmentEntity } from "../infra/typeorm/entities/Appointment.model";
 import ICreateAppointmentDTO from "../dtos/ICreateAppointmentDTO";
-import IFindAllInMonthFromProviderDTO from "../dtos/IFindAllInMonthFromProviderDTO";
 import IFindAllInDayFromProviderDTO from "../dtos/IFindAllInDayFromProviderDTO";
+import IFindAllInMonthFromProviderDTO from "../dtos/IFindAllInMonthFromProviderDTO";
+import { AppointmentEntity } from "../infra/typeorm/entities/Appointment.model";
 
 export default interface IAppointmentsRepository {
     create(data: ICreateAppointmentDTO): Promise<AppointmentEntity>;

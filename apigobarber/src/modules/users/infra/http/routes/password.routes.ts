@@ -1,9 +1,7 @@
-import AuthenticateUserService from '@modules/users/services/AuthenticateUserService';
+import { celebrate, Joi, Segments } from 'celebrate';
 import { Router } from 'express';
-import { container } from 'tsyringe';
 import ForgotPasswordController from '../controllers/ForgotPasswordControler';
 import ResetPasswordController from '../controllers/ResetPasswordController';
-import { celebrate, Segments, Joi } from 'celebrate';
 
 const passwordRouter = Router();
 
