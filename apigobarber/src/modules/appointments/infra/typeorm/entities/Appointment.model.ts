@@ -26,7 +26,7 @@ export class AppointmentEntity implements IAppointment {
     @Column()
     user_id: string;
 
-    @ManyToOne(() => UserEntity)
+    @ManyToOne(() => UserEntity, {eager: true})
     @JoinColumn({name: 'user_id'})
     user: UserEntity;
 

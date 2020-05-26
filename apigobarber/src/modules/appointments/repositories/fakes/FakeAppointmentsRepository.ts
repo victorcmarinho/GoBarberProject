@@ -19,8 +19,11 @@ export default class FakeAppointmentsRepository implements IAppointmentsReposito
         return appointment;
     }
 
-    public async findByDate(date: Date): Promise<AppointmentEntity | undefined> {
-        return this.appointment.find(appointment => isEqual(appointment.date,date));
+    public async findByDate(date: Date, provider_id: string): Promise<AppointmentEntity | undefined> {
+        return this.appointment.find(appointment => 
+            isEqual(appointment.date,date) &&
+            appointment.provider_id === provider_id
+        );
     }
 
     async findAllInMonthFromProvider({provider_id, month, year}: IFindAllInMonthFromProviderDTO): Promise<AppointmentEntity[]> {
