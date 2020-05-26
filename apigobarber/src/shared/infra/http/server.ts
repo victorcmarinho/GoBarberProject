@@ -12,9 +12,10 @@ import AppError from '@shared/errors/AppErros';
 import { errors } from 'celebrate';
 import cors from 'cors';
 import routes from './routes';
+import rateLimiter from './middlewares/rateLimiter';
 
 const app = express();
-
+app.use(rateLimiter);
 app.use(cors());
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.uploadsFolder));

@@ -3,9 +3,11 @@ import FakeHashProvider from "../providers/HashProvider/fakes/FakeBCryptHashProv
 import FakeUsersRepository from "../repositories/fakes/FakeUsersRepository";
 import AuthenticateUserService from "./AuthenticateUserService";
 import CreateUserService from "./CreateUserService";
+import FakeCacheProvider from "@shared/container/providers/CacheProvider/fakes/FakeCacheProvider";
 
 let fakeUsersRepository:FakeUsersRepository;
 let fakeHashProvider:FakeHashProvider;
+let fakeCacheProvider: FakeCacheProvider;
 let createdUsersService:CreateUserService;
 let authenticatedUsers: AuthenticateUserService;
 describe('AuthenticateUser', () => {
@@ -13,7 +15,8 @@ describe('AuthenticateUser', () => {
     beforeEach(() => {
         fakeUsersRepository = new FakeUsersRepository();
         fakeHashProvider = new FakeHashProvider();
-        createdUsersService = new CreateUserService(fakeUsersRepository, fakeHashProvider);
+        fakeCacheProvider = new FakeCacheProvider();
+        createdUsersService = new CreateUserService(fakeUsersRepository, fakeHashProvider, fakeCacheProvider);
         authenticatedUsers = new AuthenticateUserService(fakeUsersRepository, fakeHashProvider);
 
     });

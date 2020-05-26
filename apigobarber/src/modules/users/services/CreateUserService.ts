@@ -3,6 +3,7 @@ import AppError from "../../../shared/errors/AppErros";
 import { UserEntity } from "../infra/typeorm/entities/UserEntity";
 import IHashProvider from "../providers/HashProvider/models/IHashProvider";
 import IUsersRepository from "../repositories/IUsersRepository";
+import ICacheProvider from "@shared/container/providers/CacheProvider/models/ICacheProvider";
 
 interface RequestDTO {
     name: string,
@@ -17,7 +18,9 @@ export default class CreateUserService {
         @inject('UsersRepository')
         private usersRepository: IUsersRepository,
         @inject('HashProvider')
-        private hashProvider: IHashProvider
+        private hashProvider: IHashProvider,
+        @inject('CacheProvider')
+        private cacheProvider: ICacheProvider
     ) { }
     public async execute({name, email, password}: RequestDTO): Promise<UserEntity> {
         
@@ -35,6 +38,8 @@ export default class CreateUserService {
                 password: hashedPassword
             }
         );
+
+        await this.cacheProvider.invalidadePrefix('providers-list');
 
 
         return user;
