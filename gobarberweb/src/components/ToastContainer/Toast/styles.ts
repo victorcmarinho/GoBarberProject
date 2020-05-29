@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 interface ContainerProps {
     type?: 'success' | 'error' | 'info' | undefined;
-    hasDescription: boolean;
+    hasDescription: number;
 }
 
 const toastTypeVariation = {

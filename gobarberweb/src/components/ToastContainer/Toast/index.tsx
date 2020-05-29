@@ -31,13 +31,12 @@ const Toast: React.FC<ToastProps> = ({message,style}) => {
     return (
         <Container
             type={message.type}   
-            hasDescription={!!message.description}
+            hasDescription={Number(!!message.description)}
             style={style}
         >
             
             {icons[message.type || 'info']}
 
-            <FiAlertCircle size={20} />
             <div>
                 <strong>{message.title}</strong>
                 {message.description && <p>{message.description}</p>}
