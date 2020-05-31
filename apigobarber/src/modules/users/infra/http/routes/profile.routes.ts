@@ -12,7 +12,7 @@ profileRouter.use(ensureAuthenticated);
 profileRouter.get('/', profileController.show);
 profileRouter.put('/', celebrate({
     [Segments.BODY]: {
-        name: Joi.string().required,
+        name: Joi.string().required(),
         email: Joi.string().email().required(),
         old_password: Joi.string(),
         password: Joi.string(),
