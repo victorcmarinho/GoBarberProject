@@ -101,7 +101,7 @@ describe('UpdateUserAvatar', () => {
         
     });
 
-    it('should be able to update the password wihout old password', async () => {
+    it('should be able to update the password without old password', async () => {
         
         const user = await fakeUsersRepository.create({
             name: 'John Doe',
