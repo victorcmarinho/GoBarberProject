@@ -17,8 +17,6 @@ import ImageEditor from '@react-native-community/image-editor';
 
 import api from '../../services/api';
 
-import getValidationErros from '../../utils/getValidationErrors';
-
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
@@ -30,6 +28,7 @@ import {
   UserAvatarButton,
 } from './styles';
 import { useAuth } from '../../hooks/auth';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface ProfileFormData {
   name: string;
@@ -108,9 +107,9 @@ const Profile: React.FC = () => {
         goBack();
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
-          const errors = getValidationErros(err);
+          // const errors = getValidationErros(err);
 
-          formRef.current?.setErrors(errors);
+          // formRef.current?.setErrors(errors);
           return;
         }
         Alert.alert(
@@ -179,7 +178,6 @@ const Profile: React.FC = () => {
       >
         <ScrollView
           keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flex: 1 }}
         >
           <Container>
             <BackButton onPress={handleGoBack}>
