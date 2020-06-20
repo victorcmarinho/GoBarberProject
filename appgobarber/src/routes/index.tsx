@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
-import { useAuth } from '../hooks/AuthContext';
+import { useAuth } from '../hooks/auth';
 import AppRoutes from './app.routes';
 import AuthRoutes from './auth.routes';
 const Routes: React.FC = () => {

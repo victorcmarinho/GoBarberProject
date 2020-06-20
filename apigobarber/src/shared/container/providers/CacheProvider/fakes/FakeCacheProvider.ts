@@ -6,7 +6,7 @@ interface ICacheData {
     [key: string]: string;
 }
 export default class FakeCacheProvider implements ICacheProvider {
-
+    
     private cache: ICacheData = {}
 
     async save(key: string, value: any): Promise<void> {
@@ -36,6 +36,10 @@ export default class FakeCacheProvider implements ICacheProvider {
             delete this.cache[key]
         });
 
+    }
+
+    async clearCache(): Promise<void> {
+        this.cache = {};
     }
 
 }

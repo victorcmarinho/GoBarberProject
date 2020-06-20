@@ -9,6 +9,7 @@ export default class RedisCacheProvider implements ICacheProvider {
 
     constructor() {
         this.client = new Redis(cacheConfig.config.redis);
+        this.clearCache();
     }
 
 
@@ -42,6 +43,10 @@ export default class RedisCacheProvider implements ICacheProvider {
 
         await pipeline.exec();
 
+    }
+
+    async clearCache(): Promise<void> {
+       this.client.flushall();
     }
 
 }
