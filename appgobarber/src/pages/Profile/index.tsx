@@ -28,7 +28,7 @@ import {
   UserAvatarButton,
 } from './styles';
 import { useAuth } from '../../hooks/auth';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import getValidationErros from '../../utils/getValidationErros';
 
 interface ProfileFormData {
   name: string;
@@ -107,9 +107,9 @@ const Profile: React.FC = () => {
         goBack();
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
-          // const errors = getValidationErros(err);
+          const errors = getValidationErros(err);
 
-          // formRef.current?.setErrors(errors);
+          formRef.current?.setErrors(errors);
           return;
         }
         Alert.alert(
@@ -197,6 +197,7 @@ const Profile: React.FC = () => {
                 icon="user"
                 placeholder="Nome"
                 onSubmitEditing={() => emailInputRef.current?.focus()}
+                value={user.name}
               />
               <Input
                 ref={emailInputRef}
@@ -207,6 +208,7 @@ const Profile: React.FC = () => {
                 name="email"
                 icon="mail"
                 placeholder="E-mail"
+                value={user.email}
                 onSubmitEditing={() => oldPasswordInputRef.current?.focus()}
               />
               <Input
