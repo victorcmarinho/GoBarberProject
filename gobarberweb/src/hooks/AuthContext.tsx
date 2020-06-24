@@ -33,7 +33,6 @@ export const AuthProvider: React.FC = ({ children }) => {
     const [data, setData] = useState<AuthState>(() => {
         const token = localStorage.getItem('@Gobarber:token');
         const user = localStorage.getItem('@Gobarber:user');
-        
         if(token && user) {
             api.defaults.headers.authorization = `Bearer ${token}`;
             return {token, user: JSON.parse(user)}
@@ -82,8 +81,5 @@ export const AuthProvider: React.FC = ({ children }) => {
 
 export function useAuth(): IAuthContext {
     const context = useContext(AuthContext);
-    if(!context) {
-        throw new Error('useAuth must be used within an AuthProvider')
-    }
     return context;
 }

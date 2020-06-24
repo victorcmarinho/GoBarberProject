@@ -34,7 +34,6 @@
     "test": "react-scripts test",
     "test:coverage": "react-scripts test --coverage --watchAll false",
     "eject": "react-scripts eject"
-
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -60,8 +59,11 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^3.3.0",
     "@types/axios": "^0.14.0",
     "@types/styled-components": "^5.1.0",
-    "@types/yup": "^0.28.0"
+    "@types/yup": "^0.28.0",
+    "axios-mock-adapter": "^1.18.1",
+    "react-test-renderer": "^16.13.1"
   }
 }
