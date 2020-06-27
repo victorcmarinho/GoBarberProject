@@ -9,3 +9,4 @@ coverage/
 coverage/*
 .env
 ormconfig.json
+dist/
